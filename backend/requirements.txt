@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+groq
+langgraph
+psycopg2-binary
+pymupdf
+python-docx
+easyocr
+Pillow
+python-dotenv
