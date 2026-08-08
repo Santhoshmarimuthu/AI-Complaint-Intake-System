@@ -4,7 +4,6 @@ An AI-powered complaint intake and management system that accepts complaint info
 
 ## Features
 
-```text
 - Text-based complaint intake
 - Upload complaints as PDF, DOCX, TXT, EML, and image files
 - OCR using EasyOCR for image-based complaints
@@ -21,7 +20,7 @@ An AI-powered complaint intake and management system that accepts complaint info
 - React and Redux frontend
 - FastAPI backend
 - Groq LLM integration
-```
+
 
 
 
