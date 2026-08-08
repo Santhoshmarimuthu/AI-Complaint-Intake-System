@@ -9,7 +9,6 @@ An AI-powered complaint intake and management system that accepts complaint info
 - OCR using EasyOCR for image-based complaints
 - PDF text extraction using PyMuPDF
 - AI-powered complaint extraction and editing
-- New complaint and edit intent detection
 - Stateful conversations using LangGraph
 - AI risk assessment
 - Complaint completeness checking
@@ -113,79 +112,6 @@ After replacing `src`, run:
 npm run dev
 ```
 
-## Running the Application
-
-Run the backend and frontend in separate terminals.
-
-### Backend
-
-```bash
-cd backend
-uvicorn api:app --reload
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open the frontend URL shown by Vite, usually:
-
-```text
-http://localhost:5173
-```
-
-## Workflow
-
-```text
-User
-  |
-  v
-React + Redux Frontend
-  |
-  v
-FastAPI
-  |
-  +--> Text Input
-  |
-  +--> File Upload
-          |
-          v
-     Text Extraction / OCR
-          |
-          v
-       LangGraph
-          |
-          v
-      Groq / Llama
-          |
-          +--> Complaint Extraction
-          +--> Complaint Editing
-          +--> Risk Assessment
-          +--> Completeness Check
-          +--> Summary
-          |
-          v
-      Updated State
-          |
-          v
-       React + Redux
-          |
-          v
-      User Review
-          |
-          v
-       Submit
-          |
-          v
-   Duplicate Detection
-          |
-          v
-      PostgreSQL
-```
 
 ## Technologies
 
@@ -225,14 +151,4 @@ The application supports:
 - BMP
 - WEBP
 
-## Security Note
 
-Do not commit your actual `.env` file to GitHub.
-
-It may contain your Groq API key and PostgreSQL password. Use `.env.example` as a template instead.
-
-## Submission
-
-The complaint is saved to PostgreSQL only after the user confirms submission.
-
-AI-extracted information can be reviewed and corrected before submission. If a duplicate complaint is detected, the current form and conversation are preserved so the user can continue editing.
